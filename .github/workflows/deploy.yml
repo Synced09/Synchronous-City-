@@ -25,7 +25,9 @@ jobs:
       - name: Unpack website
         run: |
           unzip -o synchronous-city-github-ready.zip -d site
-
+      - name: Fix campaign exports
+        run: |
+          sed -i 's/^const art = {/export const art = {/' site/src/lib/campaign.ts
       - name: Setup Node
         uses: actions/setup-node@v4
         with:
