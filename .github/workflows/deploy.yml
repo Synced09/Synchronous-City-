@@ -25,7 +25,7 @@ jobs:
       - name: Unpack website
         run: |
           unzip -o synchronous-city-github-ready.zip -d site
-                - name: Fix GitHub Pages path
+      - name: Fix GitHub Pages path
         run: |
           sed -i 's|base: process.env.GITHUB_ACTIONS ? "/Synchronous-City/" : "/"|base: process.env.GITHUB_ACTIONS ? "/Synchronous-City-/" : "/"|' site/vite.config.ts
       - name: Fix campaign exports
